@@ -1,7 +1,7 @@
 <template>
   <div class="row justify-content-center jadwal-imsak mt-3">
     <div class="title mb-2 text-center">
-      <h2>Jadwal Imsakiyah</h2>
+      <h1>Jadwal Imsakiyah</h1>
       <i>Data ini diambil dari kementrian agama republik Indonesia</i>
     </div>
     <div class="col-md-8 mt-4">
@@ -20,7 +20,7 @@
                   <select
                     class="form-select form-select-lg mb-3"
                     aria-label="form-select-lg example"
-                    id="state"
+                    id="stateProvinsi"
                     v-model="state.state_id"
                     @change="getCities"
                   >
@@ -43,6 +43,7 @@
                   <select
                     class="form-select form-select-lg mb-3"
                     aria-label="form-select-lg example"
+                    id="stateCity"
                     v-model="state.city_id"
                     @change="jadwalImsak"
                   >
@@ -144,3 +145,21 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+.jadwal-imsak {
+  color: #10495c;
+  .title {
+    h1 {
+      font-weight: 600;
+    }
+    i {
+      color: #0f1d37;
+    }
+  }
+  #stateProvinsi,
+  #stateCity {
+    color: #10495c;
+  }
+}
+</style>
