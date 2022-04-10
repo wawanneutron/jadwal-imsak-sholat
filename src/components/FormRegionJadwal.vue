@@ -62,19 +62,6 @@
         </div>
       </section>
     </div>
-    <!-- <div class="col-md-3">
-      <section class="menu">
-        <div class="card">
-          <div class="card-header">
-            <span>Menu Lainnya</span>
-          </div>
-          <div class="card-body">
-            <a href="#" class="btn">Jadwal Sholat</a>
-            <a href="#" class="btn">Jadwal Imsak</a>
-          </div>
-        </div>
-      </section>
-    </div> -->
   </div>
   <Card :dataApi="state.dataImsak" :dataMeta="state.dataMeta" />
 </template>
@@ -134,15 +121,15 @@ export default {
         },
       })
         .then((response) => {
-          let dataImsak = response.data.data;
+          let resultImsak = response.data.data;
           let dataMeta = response.data.meta;
-          state.dataImsak = dataImsak;
-
+          state.dataImsak = resultImsak;
+          /* pindahkan dataMeta ke dalam array,
+          lalu hapus array index pertama ketika hit data baru */
           state.dataMeta.push(dataMeta);
           if (state.dataMeta.length > 1) {
             state.dataMeta.shift();
           }
-          console.info(state.dataMeta);
         })
         .catch((error) => {
           console.error(error);
