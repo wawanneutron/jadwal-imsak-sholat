@@ -97,7 +97,6 @@ export default {
 
     // dapatkan kota
     const getCities = () => {
-      console.info(state.state_id);
       Api.get("/city", {
         params: {
           state: state.state_id,
