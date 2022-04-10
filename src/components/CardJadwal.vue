@@ -90,7 +90,7 @@
                 <i class="iconwaktu icon-isya"></i>
                 <div class="waktu-sholat">
                   <span class="title">Isya'</span>
-                  <span class="waktu">{{ `${property.syuruk}` }}</span>
+                  <span class="waktu">{{ `${property.isya}` }}</span>
                 </div>
               </div>
             </div>
