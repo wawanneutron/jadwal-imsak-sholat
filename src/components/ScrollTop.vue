@@ -41,7 +41,7 @@ export default {
       }
       // Stop executing this function if the difference between
       // current scroll position and last scroll position is less than some offset
-      if (Math.abs(currentScrollPosition - this.lastScrollPosition) < 300) {
+      if (Math.abs(currentScrollPosition - this.lastScrollPosition) < 80) {
         return;
       }
       this.visible = currentScrollPosition < this.lastScrollPosition;
