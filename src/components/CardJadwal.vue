@@ -1,12 +1,13 @@
 <template>
   <div class="row mt-5 row-jadwalsholat">
-    <div class="title mb-2">
+    <div class="title-header mb-2">
       <template v-for="(item, index) of dataMeta" :key="index">
         <h4 class="text-center">
           {{ `Jadwal Imsak Untuk Daerah ${item.city} Provinsi ${item.state}` }}
           <br />
           {{ `Tahun ${item.year}/${item.hijri}H` }}
         </h4>
+        <hr />
         <div class="detail table-responsive text-center">
           <table class="table caption-top table-borderless table-striped">
             <caption>
@@ -101,6 +102,11 @@
         </div>
       </div>
     </template>
+    <div class="github">
+      <a href="https://github.com/wawanneutron" target="__blank"
+        >More About Me</a
+      >
+    </div>
   </div>
 </template>
 
@@ -128,10 +134,15 @@ $waktu-isya: "#{$assetsPath}waktu-isya.svg";
 
 .row-jadwalsholat {
   margin-bottom: 110px;
+  .title-header {
+    h4 {
+      color: #10495c;
+      font-weight: 500;
+      line-height: 40px;
+    }
+  }
   .detail {
-    font-size: 15px;
     color: #10495c;
-    font-weight: 500;
     margin-top: 50px;
   }
   .text-card-header {
@@ -185,9 +196,31 @@ $waktu-isya: "#{$assetsPath}waktu-isya.svg";
       font-weight: 500;
     }
   }
+  .github {
+    text-align: center;
+    padding-top: 40px;
+    a {
+      color: #10495c;
+      font-size: 14px;
+      font-weight: 200;
+      opacity: 30%;
+      &:hover {
+        color: #0f1d37;
+        opacity: 50%;
+      }
+    }
+  }
 }
 
 @media (max-width: 576px) {
+  .title-header {
+    h4 {
+      font-size: 18px;
+      color: #10495c;
+      font-weight: 500;
+      line-height: 20px;
+    }
+  }
   .row-waktu {
     .col-4 {
       text-align: center;
