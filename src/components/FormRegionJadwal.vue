@@ -1,14 +1,14 @@
 <template>
-  <div class="row justify-content-center jadwal-imsak">
+  <div class="row justify-content-center jadwal-imsak mt-3">
     <div class="title mb-2 text-center">
       <h2>Jadwal Imsakiyah</h2>
-      <h4>Data ini diambil dari kementrian agama republik Indonesia</h4>
+      <i>Data ini diambil dari kementrian agama republik Indonesia</i>
     </div>
-    <div class="col-md-7">
+    <div class="col-md-8 mt-4">
       <section class="choice-region">
-        <div class="card">
-          <div class="card-header bg-success">
-            <span>Jadwal Sholat</span>
+        <div class="card border-0">
+          <div class="card-header">
+            <span>Pilih Daerah</span>
           </div>
           <div class="card-body">
             <div class="row">
@@ -24,7 +24,7 @@
                     v-model="state.state_id"
                     @change="getCities"
                   >
-                    <option selected>-- Pilih Provinsi --</option>
+                    <option selected disabled>-- Pilih Provinsi --</option>
                     <option
                       v-for="(item, index) in stateApi"
                       :key="index"
@@ -46,8 +46,12 @@
                     v-model="state.city_id"
                     @change="jadwalImsak"
                   >
-                    <option selected>-- Pilih Kota --</option>
-                    <option v-for="(item, index) in state.cities" :key="index">
+                    <option selected disabled>-- Pilih Kota --</option>
+                    <option
+                      v-for="(item, index) in state.cities"
+                      :key="index"
+                      :value="item.id"
+                    >
                       {{ item.name }}
                     </option>
                   </select>
@@ -58,10 +62,10 @@
         </div>
       </section>
     </div>
-    <div class="col-md-3">
+    <!-- <div class="col-md-3">
       <section class="menu">
         <div class="card">
-          <div class="card-header bg-success">
+          <div class="card-header">
             <span>Menu Lainnya</span>
           </div>
           <div class="card-body">
@@ -70,9 +74,9 @@
           </div>
         </div>
       </section>
-    </div>
+    </div> -->
   </div>
-  <Card :dataApi="state.dataImsak" />
+  <Card :dataApi="state.dataImsak" :dataMeta="state.dataMeta" />
 </template>
 
 <script>
@@ -91,6 +95,7 @@ export default {
       city_id: "",
       cities: [],
       dataImsak: [],
+      dataMeta: [],
     });
 
     const store = useStore();
@@ -129,8 +134,15 @@ export default {
         },
       })
         .then((response) => {
-          state.dataImsak = response.data.data;
-          console.info(state.dataImsak);
+          let dataImsak = response.data.data;
+          let dataMeta = response.data.meta;
+          state.dataImsak = dataImsak;
+
+          state.dataMeta.push(dataMeta);
+          if (state.dataMeta.length > 1) {
+            state.dataMeta.shift();
+          }
+          console.info(state.dataMeta);
         })
         .catch((error) => {
           console.error(error);

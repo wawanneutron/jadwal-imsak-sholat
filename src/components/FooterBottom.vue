@@ -1,21 +1,44 @@
 <template>
-  <footer class="bg-light text-center text-lg-start">
-    <!-- Copyright -->
-    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
-      © 2022 Copyright:
-      <a
-        class="text-dark"
-        target="__blank"
-        href="https://github.com/wawanneutron"
-        >wawanneutron</a
-      >
-    </div>
-    <!-- Copyright -->
-  </footer>
+  <!-- Bottom Navbar -->
+  <nav class="navbar navbar-dark bg-nav-bottom navbar-expand fixed-bottom">
+    <ul class="navbar-nav justify-content-center w-100">
+      <li class="nav-item text-center me-5">
+        <a href="#" class="nav-link">
+          <div>
+            <img
+              src="../assets/icon/waktu-sholat-imsak_1.svg"
+              alt=""
+              srcset=""
+            />
+          </div>
+          Jadwal Imsak
+        </a>
+      </li>
+      <li class="nav-item text-center pointer">
+        <a href="#" class="nav-link" @click="jadwalSholat">
+          <div>
+            <img src="../assets/icon/icon_sholat_1.svg" alt="" srcset="" />
+          </div>
+          Jadwal Sholat
+        </a>
+      </li>
+    </ul>
+  </nav>
 </template>
 
-<style lang="scss">
-footer {
-  margin-top: 180px;
+<script>
+export default {
+  methods: {
+    jadwalSholat() {
+      alert("Coming soon..");
+    },
+  },
+};
+</script>
+
+<style lang="css">
+.bg-nav-bottom {
+  /* background-color: #215d71; */
+  background-color: #10495c;
 }
 </style>
