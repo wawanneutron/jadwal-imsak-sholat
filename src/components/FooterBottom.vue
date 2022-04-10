@@ -30,7 +30,7 @@
 export default {
   methods: {
     jadwalSholat() {
-      alert("Coming soon..");
+      alert("tunggu ya, belum ada ^_~");
     },
   },
 };
