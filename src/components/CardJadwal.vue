@@ -136,6 +136,7 @@ $waktu-isya: "#{$assetsPath}waktu-isya.svg";
   }
   .text-card-header {
     color: #10495c;
+    font-weight: 500;
   }
   .iconwaktu {
     display: inline-block;
