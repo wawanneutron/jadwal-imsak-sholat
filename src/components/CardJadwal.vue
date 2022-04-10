@@ -134,6 +134,9 @@ $waktu-isya: "#{$assetsPath}waktu-isya.svg";
     font-weight: 500;
     margin-top: 50px;
   }
+  .text-card-header {
+    color: #10495c;
+  }
   .iconwaktu {
     display: inline-block;
     background-size: 100%;
@@ -187,6 +190,14 @@ $waktu-isya: "#{$assetsPath}waktu-isya.svg";
   .row-waktu {
     .col-4 {
       text-align: center;
+    }
+    .iconwaktu {
+      display: inline-block;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      margin: 10px 20px;
+      width: 20px;
+      height: 20px;
     }
   }
 }
