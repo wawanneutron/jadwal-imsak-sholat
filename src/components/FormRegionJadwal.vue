@@ -1,10 +1,35 @@
 <template>
   <div class="row justify-content-center jadwal-imsak mt-3">
-    <div class="title mb-2 text-center">
+    <div v-if="!formSkeleton">
+      <dir class="d-none d-lg-block">
+        <content-loader viewBox="0 0 255 50" :speed="1.5">
+          <rect x="9" y="4" rx="0" ry="0" width="320" height="22" />
+          <rect x="18" y="14" rx="0" ry="0" width="303" height="6" />
+          <rect x="11" y="33" rx="0" ry="0" width="108" height="13" />
+          <rect x="129" y="33" rx="0" ry="0" width="60" height="13" />
+          <rect x="196" y="33" rx="0" ry="0" width="60" height="13" />
+        </content-loader>
+      </dir>
+      <dir class="d-lg-none" style="margin-top: 150px">
+        <ContentLoader
+          viewBox="0 0 130 110"
+          :speed="1.5"
+          style="margin-right: 30px"
+        >
+          <rect x="0" y="0" rx="3" ry="3" width="250" height="10" />
+          <rect x="20" y="20" rx="3" ry="3" width="220" height="10" />
+          <rect x="20" y="40" rx="3" ry="3" width="170" height="10" />
+          <rect x="0" y="60" rx="3" ry="3" width="250" height="10" />
+          <rect x="20" y="80" rx="3" ry="3" width="200" height="10" />
+          <rect x="20" y="100" rx="3" ry="3" width="80" height="10" />
+        </ContentLoader>
+      </dir>
+    </div>
+    <div class="title mb-2 text-center" v-if="formSkeleton">
       <h1>Jadwal Imsakiyah</h1>
       <i>Data ini diambil dari kementrian agama republik Indonesia</i>
     </div>
-    <div class="col-md-8 mt-4">
+    <div class="col-md-8 mt-4" v-if="formSkeleton">
       <section class="choice-region">
         <div class="card border-0">
           <div class="card-header">
@@ -70,7 +95,8 @@
 
 <script>
 import Card from "@/components/CardJadwal.vue";
-import SkeletonLoader from "@/components/SkeletonLoader.vue";
+import SkeletonLoader from "@/components/skeleton/SkeletonLoader.vue";
+import { ContentLoader } from "vue-content-loader";
 import { computed, onMounted, reactive } from "@vue/runtime-core";
 import { useStore } from "vuex";
 import Api from "@/api/Api";
@@ -79,6 +105,17 @@ export default {
   components: {
     Card,
     SkeletonLoader,
+    ContentLoader,
+  },
+  data() {
+    return {
+      formSkeleton: false,
+    };
+  },
+  mounted() {
+    setTimeout(() => {
+      this.formSkeleton = true;
+    }, 2000);
   },
   setup() {
     const state = reactive({
