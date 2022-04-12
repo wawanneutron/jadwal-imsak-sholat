@@ -54,29 +54,27 @@ export default {
 };
 </script>
 
-<style>
-svg {
-  color: #10495c;
-  border-radius: 50%;
-  background: transparent;
-  width: 45px;
-  height: 45px;
-  position: fixed;
-  bottom: 100px;
-  right: 20px;
-  cursor: pointer;
-  z-index: 1;
-}
-svg:hover {
-  /* border: 1px solid black; */
-  background: transparent;
-  color: #e29000;
-}
-/* svg {
-  padding-top: 12px;
-  font-size: 20px;
-} */
-.hidden-button {
-  display: none;
+<style lang="scss" scoped>
+.btn-arrow {
+  svg {
+    color: #10495c;
+    border-radius: 50%;
+    background: transparent;
+    width: 45px;
+    height: 45px;
+    position: fixed;
+    bottom: 100px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 1;
+  }
+  svg:hover {
+    /* border: 1px solid black; */
+    background: transparent;
+    color: #e29000;
+  }
+  .hidden-button {
+    display: none;
+  }
 }
 </style>
