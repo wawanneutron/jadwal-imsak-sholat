@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="myData">
     <div
       id="carouselExampleCaptions"
       class="carousel slide"
@@ -117,4 +117,31 @@
       </button>
     </div>
   </div>
+  <ContentLoader
+    viewBox="0 0 1000 360"
+    :speed="1"
+    primaryColor="#f3f3f3"
+    secondaryColor="#ecebeb"
+    v-else-if="!myData"
+  />
 </template>
+
+<script>
+import { ContentLoader } from "vue-content-loader";
+
+export default {
+  components: {
+    ContentLoader,
+  },
+  data() {
+    return {
+      myData: null,
+    };
+  },
+  mounted() {
+    setTimeout(() => {
+      this.myData = "Example Data";
+    }, 2000);
+  },
+};
+</script>
