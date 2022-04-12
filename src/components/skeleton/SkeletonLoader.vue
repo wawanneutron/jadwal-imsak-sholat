@@ -5,7 +5,7 @@
         <div>
           <content-loader
             viewBox="0 0 600 100"
-            :speed="2"
+            :speed="1.5"
             primaryColor="#f3f3f3"
             secondaryColor="#ecebeb"
           >
@@ -22,37 +22,37 @@
         </div>
       </div>
       <div class="col-md-4">
-        <content-loader viewBox="0 0 265 230">
+        <content-loader viewBox="0 0 265 230" :speed="1.5">
           <rect x="3" y="27" rx="4" ry="4" width="350" height="25" />
           <rect x="3" y="61" rx="2" ry="2" width="350" height="150" />
         </content-loader>
       </div>
       <div class="col-md-4">
-        <content-loader viewBox="0 0 265 230">
+        <content-loader viewBox="0 0 265 230" :speed="1.5">
           <rect x="3" y="27" rx="4" ry="4" width="350" height="25" />
           <rect x="3" y="61" rx="2" ry="2" width="350" height="150" />
         </content-loader>
       </div>
       <div class="col-md-4">
-        <content-loader viewBox="0 0 265 230">
+        <content-loader viewBox="0 0 265 230" :speed="1.5">
           <rect x="3" y="27" rx="4" ry="4" width="350" height="25" />
           <rect x="3" y="61" rx="2" ry="2" width="350" height="150" />
         </content-loader>
       </div>
       <div class="col-md-4">
-        <content-loader viewBox="0 0 265 230">
+        <content-loader viewBox="0 0 265 230" :speed="1.5">
           <rect x="3" y="27" rx="4" ry="4" width="350" height="25" />
           <rect x="3" y="61" rx="2" ry="2" width="350" height="150" />
         </content-loader>
       </div>
       <div class="col-md-4">
-        <content-loader viewBox="0 0 265 230">
+        <content-loader viewBox="0 0 265 230" :speed="1.5">
           <rect x="3" y="27" rx="4" ry="4" width="350" height="25" />
           <rect x="3" y="61" rx="2" ry="2" width="350" height="150" />
         </content-loader>
       </div>
       <div class="col-md-4">
-        <content-loader viewBox="0 0 265 230">
+        <content-loader viewBox="0 0 265 230" :speed="1.5">
           <rect x="3" y="27" rx="4" ry="4" width="350" height="25" />
           <rect x="3" y="61" rx="2" ry="2" width="350" height="150" />
         </content-loader>
