@@ -64,11 +64,13 @@
       </section>
     </div>
   </div>
+  <SkeletonLoader :skeletonLoader="state.skleton_loader" />
   <Card :dataApi="state.dataImsak" :dataMeta="state.dataMeta" />
 </template>
 
 <script>
 import Card from "@/components/CardJadwal.vue";
+import SkeletonLoader from "@/components/SkeletonLoader.vue";
 import { computed, onMounted, reactive } from "@vue/runtime-core";
 import { useStore } from "vuex";
 import Api from "@/api/Api";
@@ -76,6 +78,7 @@ import Api from "@/api/Api";
 export default {
   components: {
     Card,
+    SkeletonLoader,
   },
   setup() {
     const state = reactive({
@@ -84,6 +87,7 @@ export default {
       cities: [],
       dataImsak: [],
       dataMeta: [],
+      skleton_loader: Boolean,
     });
 
     const store = useStore();
@@ -113,6 +117,11 @@ export default {
 
     // dapatkan jadwal imsak
     const jadwalImsak = () => {
+      state.skleton_loader = true;
+      // kosongkan data
+      state.dataMeta = [];
+      state.dataImsak = [];
+
       Api.get("/imsyakiyah", {
         params: {
           state: state.state_id,
@@ -133,6 +142,10 @@ export default {
         })
         .catch((error) => {
           console.error(error);
+        })
+        .finally(() => {
+          console.info("skleton loader false");
+          state.skleton_loader = false;
         });
     };
 
