@@ -10,7 +10,7 @@
           <rect x="196" y="33" rx="0" ry="0" width="60" height="13" />
         </content-loader>
       </dir>
-      <dir class="d-lg-none" style="margin-top: 150px">
+      <dir class="d-lg-none" style="margin-top: 80px">
         <ContentLoader
           viewBox="0 0 130 110"
           :speed="1.5"
