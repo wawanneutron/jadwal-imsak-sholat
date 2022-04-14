@@ -172,6 +172,7 @@ export default {
           state.dataImsak = resultImsak;
           /* pindahkan dataMeta ke dalam array,
           lalu hapus array index pertama ketika hit data baru */
+          // gunakan truktur data queue dlam proses array
           state.dataMeta.push(dataMeta);
           if (state.dataMeta.length > 1) {
             state.dataMeta.shift();
