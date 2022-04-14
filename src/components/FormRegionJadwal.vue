@@ -170,12 +170,12 @@ export default {
           let resultImsak = response.data.data;
           let dataMeta = response.data.meta;
           state.dataImsak = resultImsak;
-          /* pindahkan dataMeta ke dalam array,
-          lalu hapus array index pertama ketika hit data baru */
-          // gunakan truktur data queue dlam proses array
+          /* memasukan data kedalam array, lalu data baru berada diurutan belakang,
+          dan ambil data paling baru (LIFO) dengan lifo()*/
+          // gunakan truktur data stack dlam proses array
           state.dataMeta.push(dataMeta);
           if (state.dataMeta.length > 1) {
-            state.dataMeta.shift();
+            state.dataMeta.pop();
           }
         })
         .catch((error) => {
