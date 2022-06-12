@@ -1,6 +1,8 @@
 # jadwal-imsyak-sholat
 
-## [Demo Live] (https://jadwal-imsak.netlify.app/)
+## Demo Live
+
+https://jadwal-imsak.netlify.app/
 
 ## Project setup
 
